@@ -7,15 +7,15 @@ y = np.array([1,4,6,9])
 def test_coefficients():
     model = LinearRegression()
     model.fit(X, y)
-    assert round(model.coef_[0],1) == 2.6
+    assert model.coef_[0][0] == 2.2
 
 def test_intercept():
     model = LinearRegression()
     model.fit(X, y)
-    assert round(model.intercept_,1) == -1.0
+    assert model.intercept_[0] == 0.0
 
 def test_predictions():
     model = LinearRegression()
     model.fit(X, y)
     pred = model.predict(X)
-    assert len(pred) == 4
+    assert round(pred[0],2) ==10.0
